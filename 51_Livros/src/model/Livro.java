@@ -1,11 +1,28 @@
 package model;
 
-public class Livro {
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
+@DatabaseTable(tableName = "livro")
+
+public class Livro {
+	
+	public static final String ISBN_FIELD_NAME = "isbn";
+	public static final String TITULO_FIELD_NAME = "titulo";
+	
+	@DatabaseField(generatedId = true)
+	private int id;
+	
+	@DatabaseField(columnName = ISBN_FIELD_NAME, canBeNull = false)
+	private long isbn;
+	
+	@DatabaseField(columnName = TITULO_FIELD_NAME)
+	private String titulo;
+	
 	
 	//isbn não pode ser atribuido por int, somente por long (l) no final do número
-	private long isbn;
-	private String titulo;
+	
+	
 	private int edicao;
 	private int ano;
 	private String formato;
