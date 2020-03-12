@@ -13,99 +13,95 @@ public class ExerciciosJanelasEPaineis extends JFrame {
 	
 	JTabbedPane exercicios = new JTabbedPane();
 	
+	//imagens dos carros que irão aparecer na janela
 	ImageIcon hb20 = new ImageIcon("img/hb20.jpg");
 	ImageIcon onix = new ImageIcon("img/onix.jpg");
 	ImageIcon uno = new ImageIcon("img/uno.jpg");
 	
+	//imagens que irão aparecer como ícones das abas
 	ImageIcon icone_painel_01 = new ImageIcon("img/car.png");
 	ImageIcon icone_painel_02 = new ImageIcon("img/car (1).png");
 	ImageIcon icone_painel_03 = new ImageIcon("img/vehicle.png");
 	
-	JPanel painel_texto_01 = new JPanel();
-	JLabel label_icone_01 = new JLabel(icone_painel_01);
-	JLabel label01_01 = new JLabel("Fabricante: Hyundai");
-	JLabel label01_02 = new JLabel("Modelo: HB20");
-	JLabel label01_03 = new JLabel("Ano: 2019");
-	JLabel label01_04 = new JLabel("Motor: 5 L");
-	JLabel label01_05 = new JLabel("Preço: R$42.000,00");
+	//texto que irá aparecer 
+	JLabel label01_01 = new JLabel("<html>Fabricante: Hyundai<br/>Modelo: HB20<br/>Ano: 2019<br/>Motor: 5 L<br/>Preço: R$42.000,00</html>");	
+	JLabel label02_01 = new JLabel("<html>Fabricante: Cherolet<br/>Modelo: Onix<br/>Ano: 2018<br/>Motor: 5 L<br/>Preço: R$36.990,00</html>");	
+	JLabel label03_01 = new JLabel("<html>Fabricante: Fiat<br/>Modelo: Uno<br/>Ano: 2016<br/>Motor: 5 L<br/>Preço: R$30.000,00</html>");
 	
-	JPanel painel_img_01 = new JPanel();
+	//imagens dos carros que irão aparecer na janela
 	JLabel label_foto_hb20 = new JLabel(hb20);
-			
-	JPanel painel_texto_02 = new JPanel();
-	JLabel label_icone_02 = new JLabel(icone_painel_02);
-	JLabel label02_01 = new JLabel("Fabricante: Chevrolet");
-	JLabel label02_02 = new JLabel("Modelo: Onix");
-	JLabel label02_03 = new JLabel("Ano: 2018");
-	JLabel label02_04 = new JLabel("Motor: 5 L");
-	JLabel label02_05 = new JLabel("Preço: R$36.990,00");
-	
-	JPanel painel_img_02 = new JPanel();
-	JLabel label_foto_onix = new JLabel(onix);
-	
-	JPanel painel_texto_03 = new JPanel();
-	JLabel label_icone_03 = new JLabel(icone_painel_03);
-	JLabel label03_01 = new JLabel("Fabricante: Fiat");
-	JLabel label03_02 = new JLabel("Modelo: Uno");
-	JLabel label03_03 = new JLabel("Ano: 2016");
-	JLabel label03_04 = new JLabel("Motor: 7 L");
-	JLabel label03_05 = new JLabel("Preço: R$30.000,00");
-	
-	JPanel painel_img_03 = new JPanel();
+	JLabel label_foto_onix = new JLabel(onix);	
 	JLabel label_foto_uno = new JLabel(uno);
+		
+	//imagens que irão aparecer como ícones das abas
+	JLabel label_icone_01 = new JLabel(icone_painel_01);
+	JLabel label_icone_02 = new JLabel(icone_painel_02);
+	JLabel label_icone_03 = new JLabel(icone_painel_03);
+		
+	//painel principal, que irá receber paineis de texto e imagem
+	JPanel painelPrincipal01 = new JPanel();
+	JPanel painelPrincipal02 = new JPanel();
+	JPanel painelPrincipal03 = new JPanel();
 	
-	JPanel painel_principal_01 = new JPanel();
-	painel_principal_01.setLayout(new GridLayout(1, 2));
+	//painel para textos
+	JPanel painel_texto_01 = new JPanel();
+	JPanel painel_texto_02 = new JPanel();
+	JPanel painel_texto_03 = new JPanel();
 	
-	JPanel painel_principal_02 = new JPanel();
-	JPanel painel_principal_03 = new JPanel();
+	//painel para imagens
+	JPanel painel_img_01 = new JPanel();
+	JPanel painel_img_02 = new JPanel();
+	JPanel painel_img_03 = new JPanel();
 	
 	public ExerciciosJanelasEPaineis() {
 		super("Identificação de carros");
 		
-		painel_texto_01.add(label01_01);
-		painel_texto_01.add(label01_02);
-		painel_texto_01.add(label01_03);
-		painel_texto_01.add(label01_04);
-		painel_texto_01.add(label01_05);	
+	//configurações de linhas e colunas do painel
+	painelPrincipal01.setLayout(new GridLayout(1, 2));	
+	painelPrincipal02.setLayout(new GridLayout(1, 2));
+	painelPrincipal03.setLayout(new GridLayout(1, 2));		
 		
-		painel_img_01.add(label_foto_hb20);
+	//configurações de linhas e colunas do painel
+	painel_texto_01.setLayout(new GridLayout(5, 1));
+	painel_texto_02.setLayout(new GridLayout(5, 1));	
+	painel_texto_03.setLayout(new GridLayout(5, 1));	
+	
+	//configurações de linhas e colunas do painel
+	painel_img_01.setLayout(new GridLayout(5, 1));
+	painel_img_02.setLayout(new GridLayout(5, 1));
+	painel_img_03.setLayout(new GridLayout(5, 1));
+	
+	//aba de carro 1
+	painel_texto_01.add(label01_01);			
+	painel_img_01.add(label_foto_hb20);
+	painelPrincipal01.add(painel_texto_01);
+	painelPrincipal01.add(painel_img_01);	
+	
+	//aba de carro 2
+	painel_texto_02.add(label02_01);		
+	painel_img_02.add(label_foto_onix);
+	painelPrincipal02.add(painel_texto_02);
+	painelPrincipal02.add(painel_img_02);
+	
+	//aba de carro3	
+	painel_texto_03.add(label03_01);		
+	painel_img_03.add(label_foto_uno);		
+	painelPrincipal03.add(painel_texto_03);
+	painelPrincipal03.add(painel_img_03);		
 		
-		painel_texto_02.add(label02_01);
-		painel_texto_02.add(label02_02);
-		painel_texto_02.add(label01_03);
-		painel_texto_02.add(label02_04);
-		painel_texto_02.add(label02_05);
+	//definindo itens que irão na aba
+	exercicios.addTab("Carro 1", icone_painel_01, painelPrincipal01, "Carro 1");
+	exercicios.addTab("Carro 2", icone_painel_02, painelPrincipal02, "Carro 2");
+	exercicios.addTab("Carro 3", icone_painel_03, painelPrincipal03, "Carro 3");
 		
-		painel_img_02.add(label_foto_onix);
+	Container container = getContentPane();
+	container.add(exercicios);
 		
-		painel_texto_03.add(label03_01);
-		painel_texto_03.add(label03_02);
-		painel_texto_03.add(label03_03);
-		painel_texto_03.add(label03_04);
-		painel_texto_03.add(label03_05);
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	setVisible(true);
+	setSize(500, 500);
+	setLocationRelativeTo(null);
 		
-		painel_img_03.add(label_foto_uno);
-		
-		painel_principal_01.add(painel_texto_01);
-		painel_principal_01.add(painel_img_01);
-		
-		painel_principal_02.add(painel_texto_02);
-		painel_principal_02.add(painel_img_02);
-		
-		painel_principal_03.add(painel_texto_03);
-		painel_principal_03.add(painel_img_03);		
-		
-		exercicios.addTab("Carro 1", icone_painel_01, painel_principal_01, "Carro 1");
-		exercicios.addTab("Carro 2", icone_painel_02, painel_principal_02, "Carro 2");
-		exercicios.addTab("Carro 3", icone_painel_03, painel_principal_03, "Carro 3");
-		
-		Container container = getContentPane();
-		container.add(exercicios);
-		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(600, 400);
-		setVisible(true);
 	}
 
 	public static void main(String[] args) {
